@@ -1,0 +1,417 @@
+/* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(45deg, blue, #008000);
+
+    color: white;
+    overflow-x: hidden;
+}
+
+#scene {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 5%;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 60px;
+    position: relative; /* This ensures the brand title is positioned relative to the navbar */
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    list-style-type: none;  
+    padding: 0;
+    margin: 0;  
+    flex-grow: 2; /* It will take the available space and center its items */
+}
+
+.navbar li {
+    margin: 0 20px; 
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600; 
+    font-size: 18px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.navbar a:hover {
+    transform: scale(1.2);
+    color: gold;
+}
+
+.brand-title {
+    position: absolute; 
+    left: 10px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    font-size: 40px; 
+    font-weight: 800;
+    font-family: 'Pacifico', cursive;
+}
+/* Footer */
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Notifications Box and Title */
+#notifications {
+    position: fixed;
+    top: 25%; 
+    right: 2%;
+    width: 30%;  
+    height: 60%;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    overflow-y: scroll;
+}
+
+h1.title {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: right; /* Title aligned to the right */
+    position: absolute;
+    top: 10%; /* Adjusted positioning */
+    right: 2.5%; 
+    z-index: 10;
+}
+
+
+/* Contact Form Enhancements */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 50px auto;
+    max-width: 600px;
+}
+
+.contact-form input, .contact-form select, .contact-form textarea {
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    width: 90%;
+    margin-bottom: 20px;
+    font-size: 16px;
+    outline: none;
+}
+
+.contact-form textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: purple;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 16px;
+}
+
+.contact-form button:hover {
+    background-color: darkpurple;
+    transform: scale(1.05);
+}
+
+.contact-form p {
+    width: 90%;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Buttons Container */
+.button-container {
+    position: fixed;
+    bottom: 2cm; /* 2 cm above the footer */
+    left: 37%;
+    transform: translateX(-50%); /* Centers the container horizontally */
+    display: flex;
+    gap: 20px; /* Space between the buttons */
+}
+
+/* Common Styles for Both Buttons */
+.custom-btn {
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-btn:hover {
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.signaler-btn {
+    background-color: #810101;
+    color: white;
+}
+
+.contact-btn {
+    background-color: #008000;
+    color: white;
+}
+
+.signaler-btn:hover {
+    background-color: #db0000; 
+}
+
+.contact-btn:hover {
+    background-color: rgb(46, 162, 54); 
+}
+
+/* Modal General */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7); 
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover, .close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal General */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7); 
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%; /* reduce width for a slimmer look */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    font-family: Arial, sans-serif;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+    margin: -10px -10px 0 0;
+}
+
+.close-btn:hover, .close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal General */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    position: relative;
+    background: linear-gradient(45deg, rgb(17, 176, 255), #008000);; /* Classy gradient background */
+    color: #fefefe;
+    margin: 10% auto;
+    padding: 30px;
+    border: none;
+    width: 50%;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+    font-family: 'Lobster', sans-serif; /* Using the Lobster font you have linked */
+}
+
+.close-btn {
+    color: #fff;
+    float: right;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+    margin: -15px -15px 0 0;
+    transition: color 0.3s;
+}
+
+.close-btn:hover, .close-btn:focus {
+    color: #F67280;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal General */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    position: relative;
+    background-color: #1a1a1a;  /* Dark Background */
+    color: #ddd;  /* Light text for contrast */
+    margin: 10% auto;
+    padding: 30px;
+    border: 1px solid #555;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.5);
+    font-family: Arial, sans-serif;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+    margin: -15px -15px 0 0;
+    transition: color 0.3s;
+}
+
+.close-btn:hover, .close-btn:focus {
+    color: #eee;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Styles for form elements in the modal */
+.modal select, #otherProblem, button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    border: 1px solid #555;
+    background-color: #333; 
+    border-radius: 5px;
+    font-size: 16px;
+    color: #ccc;
+    outline: none;
+}
+
+#otherProblem {
+    resize: vertical;
+    max-height: 120px;
+}
+
+button[type="submit"] {
+    padding: 10px 18px;
+    background-color: #444;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover {
+    background-color: #555;
+}
+
+.modal-label {
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+#photoUpload {
+    display: none;
+}
+
+.radio-group {
+    margin: 20px 0;
+}
+
+.radio-group label {
+    margin-right: 10px;
+    font-size: 16px;
+}
+

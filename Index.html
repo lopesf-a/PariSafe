@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PARISafe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="scene"></div>
+    <div class="navbar">
+        <div class="brand-name">PARISafe</div>
+        <ul>
+            <li><a href="index.html">ACCUEIL</a></li>
+            <li><a href="profile.html">PROFILE</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <h1 class="title"><span class="bold-text">Signalement</span> et Messages</h1>
+        <div class="notification-box" id="notifications"></div>
+    </div>
+    <div class="button-container">
+        <button class="custom-btn signaler-btn">SIGNALER</button>
+        <a href="contact.html" class="custom-btn contact-btn">CONTACT</a>
+    </div>
+    
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>SIGNALEMENT</h2>
+            <form id="signalementForm">
+                <!-- Dropdowns and Textareas as mentioned -->
+                <label for="problemType">Type de problème:</label>
+                <select id="problemType" name="problemType">
+                    <option value="punaise">punaise de lit</option>
+                    <option value="rat">Rat</option>
+                    <option value="pickpockette">pickpockette</option>
+                    <option value="autre">Autre</option>
+                </select>
+                <textarea id="otherProblem" name="otherProblem" maxlength="50" placeholder="Describe the problem"></textarea>
+                <label for="lineType">Type de Ligne:</label>
+                <select id="lineType" name="lineType">
+                    <option value="RER">RER</option>
+                    <option value="Transilien">Transilien</option>
+                    <option value="Metro">Metro</option>
+                    <option value="Tram">Tram</option>
+                </select>
+                <label for="specificLine">Ligne:</label>
+                <select id="specificLine" name="specificLine"></select>
+                <label>Avez-vous pris une photo?</label>
+                <input type="radio" id="yesPhoto" name="photoTaken" value="oui"> Oui
+                <input type="radio" id="noPhoto" name="photoTaken" value="non"> Non
+                <input id="photoUpload" type="file" name="photo">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="footer">
+        PARISafe &copy; 2023. All Rights Reserved.
+    </div>
+</body>
+</html>
